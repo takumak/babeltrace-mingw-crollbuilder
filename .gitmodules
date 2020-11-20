@@ -1,0 +1,9 @@
+[submodule "src/crosstool-ng"]
+	path = src/crosstool-ng
+	url = https://github.com/crosstool-ng/crosstool-ng.git
+[submodule "src/babeltrace"]
+	path = src/babeltrace
+	url = https://github.com/efficios/babeltrace.git
+[submodule "src/glib"]
+	path = src/glib
+	url = https://github.com/GNOME/glib.git
