@@ -1,0 +1,3 @@
+#!/bin/bash
+export WINEPATH=$(dirname $0)/_build/i686-w64-mingw32/i686-w64-mingw32/sysroot/usr/i686-w64-mingw32/bin
+wine $(dirname $0)/_target/bin/babeltrace2.exe "$@"

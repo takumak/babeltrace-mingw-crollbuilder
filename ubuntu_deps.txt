@@ -1,0 +1,20 @@
+apt install -y			\
+	automake		\
+	autoconf		\
+	libtool-bin		\
+	make			\
+	gcc			\
+	g++			\
+	flex			\
+	bison			\
+	texinfo			\
+	unzip			\
+	help2man		\
+	libncurses-dev		\
+	pkg-config		\
+	python3			\
+	python3-pip
+
+python3 -m pip install -U pip
+python3 -m pip install meson
+python3 -m pip install ninja
