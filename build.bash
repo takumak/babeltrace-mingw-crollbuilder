@@ -36,6 +36,7 @@ export CT_PREFIX="$BUILDDIR"
 export PATH="$CT_PREFIX"/i686-w64-mingw32/bin:"$PATH"
 CROSS_COMPILE="$CT_PREFIX"/i686-w64-mingw32/bin/i686-w64-mingw32-
 if [ ! -f "$CROSS_COMPILE"gcc ]; then
+  rm -rf "$BUILDDIR_MINGW"
   mkdir -p "$BUILDDIR_MINGW"
   cp ct-ng_i686-w64-mingw32_defconfig "$BUILDDIR_MINGW"/defconfig
   (
@@ -80,6 +81,7 @@ if [ ! -f "$PREFIX"/bin/babeltrace.exe ]; then
   )
 
   (
+    rm -rf "$BUILDDIR_BT2"
     mkdir -p "$BUILDDIR_BT2"
     cd "$BUILDDIR_BT2"
     "$SRCDIR_BT2"/configure \
