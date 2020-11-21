@@ -51,12 +51,20 @@ if [ ! -f "$PREFIX"/bin/libglib-2.0-0.dll ]; then
     cd "$SRCDIR_GLIB"
     git reset --hard
     git clean -dfx
-    meson \
-      --cross-file "$ROOT"/meson_i686-w64-mingw32.txt \
-      "$BUILDDIR_GLIB" \
-      --prefix="$PREFIX" \
-      -Dinternal_pcre=true
-    ninja -C "$BUILDDIR_GLIB" install
+  )
+  (
+    rm -rf "$BUILDDIR_GLIB"
+    mkdir -p "$BUILDDIR_GLIB"
+    cd "$BUILDDIR_GLIB"
+    meson						\
+      --default-library both				\
+      --cross-file "$ROOT"/meson_i686-w64-mingw32.txt	\
+      --prefix="$PREFIX"				\
+      -Dinternal_pcre=true				\
+      .							\
+      "$SRCDIR_GLIB"
+
+    ninja install
   )
 fi
 
